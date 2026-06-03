@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoVerde Antioquia S.A.S.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --verde-oscuro: #1b4332;
+      --verde-medio: #2d6a4f;
+      --verde-claro: #52b788;
+      --crema: #f8f5f0;
+      --tierra: #6b4226;
+      --blanco: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: var(--crema);
+      color: #333;
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      background-color: var(--verde-oscuro);
+      color: var(--blanco);
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 0.85rem;
+      color: var(--verde-claro);
+      font-weight: 300;
+    }
+
+    nav a {
+      color: var(--blanco);
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--verde-claro);
+    }
+
+    /* ─── BIENVENIDA ─── */
+    .bienvenida {
+      background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-medio));
+      color: var(--blanco);
+      text-align: center;
+      padding: 80px 40px;
+    }
+
+    .bienvenida h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+    }
+
+    .bienvenida p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .bienvenida .badge {
+      display: inline-block;
+      margin-top: 28px;
+      background-color: var(--verde-claro);
+      color: var(--verde-oscuro);
+      padding: 10px 28px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    /* ─── SECCIÓN SERVICIOS ─── */
+    .servicios {
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .servicios h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--verde-oscuro);
+      margin-bottom: 8px;
+    }
+
+    .servicios .subtitulo {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+    }
+
+    .card {
+      background: var(--blanco);
+      border-radius: 12px;
+      padding: 32px 28px;
+      width: 240px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      border-top: 4px solid var(--verde-claro);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card .icono {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      color: var(--verde-oscuro);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .card p {
+      font-size: 0.88rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* ─── CONTACTO ─── */
+    .contacto {
+      background-color: var(--verde-oscuro);
+      color: var(--blanco);
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .contacto h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 24px;
+    }
+
+    .contacto .info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      margin-top: 16px;
+    }
+
+    .contacto .info-item {
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .contacto .info-item span {
+      display: block;
+      color: var(--verde-claro);
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background-color: #111;
+      color: #888;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.82rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header>
+    <div>
+      <h1>🌿 EcoVerde Antioquia</h1>
+      <p>S.A.S. — Naturaleza con propósito</p>
+    </div>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- BIENVENIDA -->
+  <section class="bienvenida">
+    <h2>Bienvenidos a EcoVerde Antioquia</h2>
+    <p>
+      Somos una empresa comprometida con el cuidado, diseño y mantenimiento
+      de espacios verdes. Llevamos vida y color a cada rincón de Antioquia
+      con soluciones sostenibles para hogares, empresas y espacios públicos.
+    </p>
+    <div class="badge">🌱 Más de 10 años cuidando el verde de Antioquia</div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="servicios" id="servicios">
+    <h2>Nuestros Servicios</h2>
+    <p class="subtitulo">Todo lo que necesitas para tus espacios verdes en un solo lugar</p>
+    <div class="cards">
+      <div class="card">
+        <div class="icono">✂️</div>
+        <h3>Mantenimiento de Zonas Verdes</h3>
+        <p>Corte de césped, poda de arbustos y limpieza de áreas verdes con personal especializado.</p>
+      </div>
+      <div class="card">
+        <div class="icono">🌸</div>
+        <h3>Diseño de Jardines</h3>
+        <p>Creamos jardines personalizados adaptados a tu espacio, estilo y presupuesto.</p>
+      </div>
+      <div class="card">
+        <div class="icono">🧱</div>
+        <h3>Suministro de Materiales</h3>
+        <p>Tierra, gravilla, abono orgánico, plantas y todo lo necesario para tu proyecto.</p>
+      </div>
+      <div class="card">
+        <div class="icono">💧</div>
+        <h3>Sistemas de Riego</h3>
+        <p>Instalación y mantenimiento de sistemas de riego eficientes para jardines y cultivos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contacto" id="contacto">
+    <h2>Contáctanos</h2>
+    <p>Estamos listos para atenderte y hacer realidad tu proyecto verde</p>
+    <div class="info">
+      <div class="info-item">
+        <span>📍 Dirección</span>
+        Medellín, Antioquia, Colombia
+      </div>
+      <div class="info-item">
+        <span>📞 Teléfono</span>
+        +57 (4) 321 456 789
+      </div>
+      <div class="info-item">
+        <span>✉️ Correo</span>
+        contacto@ecoverde.com.co
+      </div>
+      <div class="info-item">
+        <span>🕘 Horario</span>
+        Lunes a Viernes: 8am – 6pm
+      </div>
+    </div>
+  </section>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <p>&copy; 2025 EcoVerde Antioquia S.A.S. — Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+services:
+
+  # Servicio 1: servidor web (nuestra página HTML de EcoVerde)
+  web:
+    build: .                        # Construye la imagen usando el Dockerfile de esta carpeta
+    container_name: ecoverde_web    # Nombre del contenedor
+    ports:
+      - "8080:80"                   # Puerto local 8080 → puerto 80 del contenedor
+    volumes:
+      - ./app:/usr/share/nginx/html # Volumen: sincroniza la carpeta app con nginx
+    networks:
+      - red_ecoverde                # Conecta este servicio a la red personalizada
+    restart: unless-stopped         # Reinicia automáticamente si el contenedor se detiene
+
+  # Servicio 2: base de datos MySQL (preparada para uso futuro)
+  db:
+    image: mysql:8.0               # Usa la imagen oficial de MySQL
+    container_name: ecoverde_db    # Nombre del contenedor
+    environment:
+      MYSQL_ROOT_PASSWORD: ecoverde123   # Contraseña del usuario root
+      MYSQL_DATABASE: ecoverde_db        # Nombre de la base de datos inicial
+    volumes:
+      - datos_db:/var/lib/mysql    # Volumen: persiste los datos de la base de datos
+    networks:
+      - red_ecoverde               # Conecta este servicio a la misma red
+    restart: unless-stopped
+
+# ─── VOLÚMENES ───
+volumes:
+  datos_db:                        # Volumen para guardar los datos de MySQL de forma persistente
+
+# ─── REDES ───
+networks:
+  red_ecoverde:                    # Red personalizada para comunicación entre servicios
+    driver: bridge
